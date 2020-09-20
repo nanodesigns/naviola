@@ -1,0 +1,125 @@
+/* NORAMALIZES EVERYTHING WITH normalize.css */
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+/* NAVIGATION */
+
+.navigation {
+    display: block;
+    position: relative;
+    background-color: #ededed;
+}
+
+.navigation::before,
+.navigation::after,
+.navigation > ul::before,
+.navigation > ul::after {
+    display: table;
+    content: " ";
+}
+
+.navigation::after,
+.navigation > ul::after {
+    clear: both;
+}
+
+.navigation ul {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation a {
+    display: block;
+    padding: 0.7rem 1rem;
+    text-decoration: none;
+    background-color: #ededed;
+    color: #333;
+}
+
+.navigation a:hover {
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navigation .toggle-button {
+    float: right;
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+    margin-top: 0.3rem;
+}
+
+.navigation ul ul {
+    padding-left: 1.5rem;
+}
+
+/* Hide sub-menus only when JavaScript is available */
+.js .navigation ul ul {
+    display: none;
+}
+
+.navigation ul li > a.active + ul {
+    display: block;
+}
+
+
+@media (min-width: 768px) {
+    .navigation .toggle-button {
+        display: none;
+    }
+
+    .navigation .toggle-button + a::after {
+        content: "";
+        display: inline-block;
+        width: 0;
+        height: 0;
+        vertical-align: middle;
+    }
+
+    /* Arrow down */
+    .navigation > ul > li > .toggle-button + a::after {
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid #666;
+        margin-left: 10px;
+    }
+
+    .navigation > ul > li > ul .toggle-button + a::after {
+        float: right;
+        margin-left: 0;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 5px solid #666;
+        margin-top: 5px;
+    }
+
+    .navigation > ul > li {
+        float: left;
+    }
+    
+    .navigation > ul li {
+        position: relative;
+    }
+
+    .navigation > ul > li ul {
+        position: absolute;
+        left: 0;
+        padding-left: 0;
+        width: 200px;
+    }
+
+    .navigation > ul li:hover > ul {
+        display: block;
+    }
+
+    .navigation ul ul ul {
+        top: 0;
+        left: 200px;
+    }
+}

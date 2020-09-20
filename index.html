@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navigation</title>
+    
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/navigation.css">
+</head>
+<body>
+    <nav class="navigation">
+        <ul class="menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/products">Products</a>
+                <ul>
+                    <li>
+                        <a href="/product/product">Product 1</a>
+                        <ul>
+                            <li><a href="/product/product-1/sub-product">Sub Product 1</a></li>
+                            <li><a href="/product/product-1/sub-product-2">Sub Product 2</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/product/product-2">Product 2</a>
+                        <ul>
+                            <li><a href="/product/product-2/sub-product">Sub Product 1</a></li>
+                            <li><a href="/product/product-2/sub-product-2">Sub Product 2</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#">Others</a>
+                <ul>
+                    <li><a href="/going/somewhere">Going Somewhere</a></li>
+                    <li>
+                        <a href="#">Going Nowhere</a>
+                        <ul>
+                            <li><a href="/dead-end">Dead End</a></li>
+                            <li><a href="#">Died</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <script src="assets/js/navigation.js"></script>
+</body>
+</html>
