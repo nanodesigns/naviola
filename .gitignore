@@ -1,0 +1,40 @@
+## Exclude the following directory/files
+
+## Release/Build
+/release
+
+## Minified files
+
+
+## Common setting
+*.log
+*.todo
+
+## Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+## Folder config file
+Desktop.ini
+
+## Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+## Windows shortcuts
+*.lnk
+
+## Archive files
+*.zip
+*.rar
+*.7z
+
+## Editor settings
+.idea
+*.sublime-project
+*.sublime-workspace
+*.sublime-grunt.cache
+*.code-workspace
+.vscode/
+
+## Node
+/node_modules

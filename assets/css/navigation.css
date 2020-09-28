@@ -1,11 +1,22 @@
 /* NORAMALIZES EVERYTHING WITH normalize.css */
 
+
+/* GENERAL STYLING */
+
 body {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+.mb-3 {
+    margin-bottom: 1.5rem;
+}
+
 
 /* NAVIGATION */
+
+:root {
+    --nav-bg: #ededed;
+}
 
 .navigation {
     display: block;
@@ -27,7 +38,7 @@ body {
 }
 
 .navigation ul {
-    display: inline-block;
+    display: block;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -57,6 +68,12 @@ body {
 
 .navigation ul ul {
     padding-left: 1.5rem;
+    z-index: 9999;
+}
+
+/* Highlight the current menu item */
+.navigation .current {
+    font-weight: 700;
 }
 
 /* Hide sub-menus only when JavaScript is available */
@@ -70,11 +87,15 @@ body {
 
 
 @media (min-width: 768px) {
-    .navigation .toggle-button {
+    .navigation-medium ul {
+        display: inline-block;
+    }
+
+    .navigation-medium .toggle-button {
         display: none;
     }
 
-    .navigation .toggle-button + a::after {
+    .navigation-medium .toggle-button + a::after {
         content: "";
         display: inline-block;
         width: 0;
@@ -83,14 +104,14 @@ body {
     }
 
     /* Arrow down */
-    .navigation > ul > li > .toggle-button + a::after {
+    .navigation-medium > ul > li > .toggle-button + a::after {
         border-left: 5px solid transparent;
         border-right: 5px solid transparent;
         border-top: 5px solid #666;
         margin-left: 10px;
     }
 
-    .navigation > ul > li > ul .toggle-button + a::after {
+    .navigation-medium > ul > li > ul .toggle-button + a::after {
         float: right;
         margin-left: 0;
         border-top: 5px solid transparent;
@@ -99,27 +120,39 @@ body {
         margin-top: 5px;
     }
 
-    .navigation > ul > li {
+    .navigation-medium > ul > li {
         float: left;
     }
     
-    .navigation > ul li {
+    .navigation-medium > ul li {
         position: relative;
     }
 
-    .navigation > ul > li ul {
+    .navigation-medium > ul > li ul {
         position: absolute;
         left: 0;
         padding-left: 0;
         width: 200px;
     }
 
-    .navigation > ul li:hover > ul {
+    .navigation-medium > ul li:hover > ul {
         display: block;
     }
 
-    .navigation ul ul ul {
+    .navigation-medium ul ul {
+        box-shadow: 0 3px 5px rgba(0,0,0,0.15);
+    }
+
+    .navigation-medium ul ul ul {
         top: 0;
         left: 200px;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .sidebar {
+        float: left;
+        width: 300px;
     }
 }
