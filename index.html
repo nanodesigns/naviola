@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Navigation</title>
+    <title>Naviola - Responsive Multi-level Navigation</title>
     
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/template.css">
     <link rel="stylesheet" href="assets/css/navigation.css">
 </head>
 <body>
@@ -30,6 +31,12 @@
                         <ul>
                             <li><a href="/product/product-2/sub-product">Sub Product 1</a></li>
                             <li><a href="/product/product-2/sub-product-2">Sub Product 2</a></li>
+                            <li>
+                                <a href="/product/product-2/sub-product-3">Sub Product 3</a>
+                                <ul>
+                                    <li><a href="#">Dead End</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
                 </ul>
@@ -51,45 +58,92 @@
         </ul>
     </nav>
 
-    <aside class="sidebar">
-        <nav class="navigation">
-            <ul class="menu">
-                <li><a href="/" class="current">Home</a></li>
-                <li><a href="/products">Products</a>
-                    <ul>
-                        <li>
-                            <a href="/product/product">Product 1</a>
-                            <ul>
-                                <li><a href="/product/product-1/sub-product">Sub Product 1</a></li>
-                                <li><a href="/product/product-1/sub-product-2">Sub Product 2</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="/product/product-2">Product 2</a>
-                            <ul>
-                                <li><a href="/product/product-2/sub-product">Sub Product 1</a></li>
-                                <li><a href="/product/product-2/sub-product-2">Sub Product 2</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li><a href="#">Others</a>
-                    <ul>
-                        <li><a href="/going/somewhere">Going Somewhere</a></li>
-                        <li>
-                            <a href="#">Going Nowhere</a>
-                            <ul>
-                                <li><a href="/dead-end">Dead End</a></li>
-                                <li><a href="#">Died</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
-        </nav>
-    </aside>
+    <main>
+        <div id="primary" class="px-3">
+            <h1 class="mt-0">Naviola <small>&mdash; Responsive Multi-level Navigation</small></h1>
+            <body class="site-content">
+                <p>Naviola is a <strong>navigation menu</strong>, has multi-level supports, where parent item can be clickable (instead of hashed).
+                    Dropdowns can be opened using toggle buttons in smaller devices, while in larger devices it be opened by just
+                    hovering over the parent menu.</p>
+
+                <h2>Features</h2>
+                <ul>
+                    <li>Unlimited Levels</li>
+                    <li>Parent menu is clickable</li>
+                    <li>Submenu opens on toggle button click in smaller devices</li>
+                    <li>Submenu opens on hover in larger devices</li>
+                    <li>Minimal code-setup</li>
+                    <li>JavaScripts only (no <strike>jQuery required</strike>)</li>
+                </ul>
+
+                <h2>Setup</h2>
+                <h3>01. Styles in <code>&lt;head&gt;&lt;/head&gt;</code></h3>
+                <pre data-lang="html">
+&lt;head&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;normalize.min.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;navigation.min.css&quot;&gt;
+&lt;/head&gt;</pre>
+
+                <h3>02. JavaScripts in Footer</h3>
+                <pre data-lang="html">
+    &lt;script src=&quot;navigation.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;</pre>
+
+                <h3>03. Navigation Markup</h3>
+                <pre data-lang="html">
+&lt;nav class=&quot;navigation navigation-medium&quot;&gt;
+    &lt;ul class=&quot;menu&quot;&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu item&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt;Menu item&lt;/a&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Submenu item&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</pre>
+            </div>
+        </div>
+        <aside class="sidebar">
+            <nav class="navigation">
+                <ul class="menu">
+                    <li><a href="/" class="current">Home</a></li>
+                    <li><a href="/products">Products</a>
+                        <ul>
+                            <li>
+                                <a href="/product/product">Product 1</a>
+                                <ul>
+                                    <li><a href="/product/product-1/sub-product">Sub Product 1</a></li>
+                                    <li><a href="/product/product-1/sub-product-2">Sub Product 2</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/product/product-2">Product 2</a>
+                                <ul>
+                                    <li><a href="/product/product-2/sub-product">Sub Product 1</a></li>
+                                    <li><a href="/product/product-2/sub-product-2">Sub Product 2</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Others</a>
+                        <ul>
+                            <li><a href="/going/somewhere">Going Somewhere</a></li>
+                            <li>
+                                <a href="#">Going Nowhere</a>
+                                <ul>
+                                    <li><a href="/dead-end">Dead End</a></li>
+                                    <li><a href="#">Died</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </aside>
+    </main>
 
     <script src="assets/js/navigation.js"></script>
 </body>
