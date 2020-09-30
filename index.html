@@ -9,54 +9,56 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="assets/css/normalize.css">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/template.css">
     <link rel="stylesheet" href="assets/css/navigation.css">
 </head>
 <body>
-    <nav class="navigation navigation-medium mb-3">
-        <ul>
-            <li><a href="/" class="current">Home</a></li>
-            <li><a href="/products">Products</a>
-                <ul>
-                    <li>
-                        <a href="/product/product">Product 1</a>
-                        <ul>
-                            <li><a href="/product/product-1/sub-product">Sub Product 1</a></li>
-                            <li><a href="/product/product-1/sub-product-2">Sub Product 2</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="/product/product-2">Product 2</a>
-                        <ul>
-                            <li><a href="/product/product-2/sub-product">Sub Product 1</a></li>
-                            <li><a href="/product/product-2/sub-product-2">Sub Product 2</a></li>
-                            <li>
-                                <a href="/product/product-2/sub-product-3">Sub Product 3</a>
-                                <ul>
-                                    <li><a href="#">Dead End</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li><a href="#">Others</a>
-                <ul>
-                    <li><a href="/going/somewhere">Going Somewhere</a></li>
-                    <li>
-                        <a href="#">Going Nowhere</a>
-                        <ul>
-                            <li><a href="/dead-end">Dead End</a></li>
-                            <li><a href="#">Died</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav class="navigation navigation-medium mb-3">
+            <ul>
+                <li><a href="/" class="current">Home</a></li>
+                <li><a href="/products">Products</a>
+                    <ul>
+                        <li>
+                            <a href="/product/product">Product 1</a>
+                            <ul>
+                                <li><a href="/product/product-1/sub-product">Sub Product 1</a></li>
+                                <li><a href="/product/product-1/sub-product-2">Sub Product 2</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/product/product-2">Product 2</a>
+                            <ul>
+                                <li><a href="/product/product-2/sub-product">Sub Product 1</a></li>
+                                <li><a href="/product/product-2/sub-product-2">Sub Product 2</a></li>
+                                <li>
+                                    <a href="/product/product-2/sub-product-3">Sub Product 3</a>
+                                    <ul>
+                                        <li><a href="#">Dead End</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">Others</a>
+                    <ul>
+                        <li><a href="/going/somewhere">Going Somewhere</a></li>
+                        <li>
+                            <a href="#">Going Nowhere</a>
+                            <ul>
+                                <li><a href="/dead-end">Dead End</a></li>
+                                <li><a href="#">Died</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
         <div id="primary" class="px-3">
@@ -68,30 +70,32 @@
 
                 <h2>Features</h2>
                 <ul>
-                    <li>Unlimited Levels</li>
-                    <li>Parent menu is clickable</li>
-                    <li>Submenu opens on toggle button click in smaller devices</li>
-                    <li>Submenu opens on hover in larger devices</li>
-                    <li>Minimal code-setup</li>
-                    <li>JavaScripts only (no <strike>jQuery required</strike>)</li>
+                    <li><strong>Unlimited</strong> Levels <span class="text-muted">&ndash; we suggest using maximum 3-level deep for better UX</span></li>
+                    <li>Parent menu is <strong>clickable</strong> <span class="text-muted">&ndash; instad of putting hash (<code>#</code>) you can put link</span></li>
+                    <li>Submenu opens on <strong>toggle button click</strong> in smaller viewport</li>
+                    <li>Submenu opens <strong>on hover</strong> in wider viewport</li>
+                    <li><strong>Minimal</strong> code-setup <span class="text-muted">&ndash; no extra class, no markup - only on the parent one</span></li>
+                    <li><strong>JavaScripts only</strong> <span class="text-muted">&ndash; no <strike>jQuery required</strike></span></li>
+                    <li><strong>Accessibile!</strong> <span class="text-muted">&ndash; close, but not yet 🙁</span></li>
                 </ul>
 
                 <h2>Setup</h2>
-                <h3>01. Styles in <code>&lt;head&gt;&lt;/head&gt;</code></h3>
-                <pre data-lang="html">
-&lt;head&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;normalize.min.css&quot;&gt;
+                <h3>01. Stylesheet in <code>&lt;head&gt;&lt;/head&gt;</code></h3>
+                <div class="code-highlight">
+                    <pre><code data-lang="html" class="prettyprint">&lt;head&gt;
     &lt;link rel=&quot;stylesheet&quot; href=&quot;navigation.min.css&quot;&gt;
-&lt;/head&gt;</pre>
+&lt;/head&gt;</code></pre>
+                </div>
 
-                <h3>02. JavaScripts in Footer</h3>
-                <pre data-lang="html">
-    &lt;script src=&quot;navigation.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;</pre>
+                <h3>02. JavaScript in Footer</h3>
+                <div class="code-highlight">
+                <pre><code data-lang="html" class="prettyprint">    &lt;script src=&quot;navigation.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;</code></pre>
+                </div>
 
                 <h3>03. Navigation Markup</h3>
-                <pre data-lang="html">
-&lt;nav class=&quot;navigation navigation-medium&quot;&gt;
+                <div class="code-highlight">
+                    <pre><code data-lang="html" class="prettyprint">&lt;nav class=&quot;navigation navigation-medium&quot;&gt;
     &lt;ul&gt;
         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu item&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;
@@ -101,7 +105,48 @@
             &lt;/ul&gt;
         &lt;/li&gt;
     &lt;/ul&gt;
-&lt;/nav&gt;</pre>
+&lt;/nav&gt;</code></pre>
+                </div>
+
+                <h2>How to Use</h2>
+                <h3>Side Navigation</h3>
+                <p>By default the navigation is a mini one, applicable for sidebar menu. So, only a <code>.navigation</code> class is enough for the menu.</p>
+                <pre><code data-lang="html" class="prettyprint">&lt;nav class=&quot;navigation&quot;&gt;&lt;/nav&gt;</code></pre>
+                <nav class="navigation border rounded">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li>
+                            <a href="/services">Services</a>
+                            <ul>
+                                <li><a href="/services/service-1">Service 1</a></li>
+                                <li><a href="#">Service 2</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/products">Products</a></li>
+                    </ul>
+                </nav>
+
+                <h3>Wide Navigation</h3>
+                <p>To make the navigation wide like the navbar on top, simply add a <code>.navigation-medium</code> class beside the <code>.navigation</code> class.</p>
+                <div class="code-highlight">
+                    <pre><code data-lang="html" class="prettyprint">&lt;nav class=&quot;navigation navigation-medium&quot;&gt;&lt;/nav&gt;</code></pre>
+                </div>
+                <nav class="navigation navigation-medium border rounded">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li>
+                            <a href="/services">Services</a>
+                            <ul>
+                                <li><a href="/services/service-1">Service 1</a></li>
+                                <li><a href="#">Service 2</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/products">Products</a></li>
+                    </ul>
+                </nav>
+
+                <h2>Developer</h2>
+                <p>Developed by <a href="https://twitter.com/mayeenulislam/">Mayeenul Islam</a> (<code>@mayeenulislam</code>) for a project of <a href="https://technovista.com.bd?ref=naviola">TechnoVista Limited</a>. Other dependent code assitance are mentioned in code where applicable.</p>
             </div>
         </div>
         <aside class="sidebar">
@@ -142,9 +187,21 @@
                     <li><a href="/contact">Contact</a></li>
                 </ul>
             </nav>
+
+            <div class="widget">
+                <h3 class="widget-title">Sidebar Navigation</h3>
+                <div class="widget-content">
+                    <p>Navigation, by default can be used on the sidebar areas, where the default behavior would be to use the Toggle button to show/hide the sub-menu items.</p>
+                </div>
+            </div>
         </aside>
     </main>
 
+    <footer class="site-footer">
+        
+    </footer>
+
     <script src="assets/js/navigation.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 </body>
 </html>

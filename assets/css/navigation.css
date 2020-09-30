@@ -46,17 +46,36 @@
     text-decoration: none;
 }
 
+.navigation ul ul {
+    background-color: #666;
+    font-size: 0.85rem;
+}
+
+.navigation ul ul a {
+    background-color: #666;
+    color: #fff;
+}
+
+.navigation ul ul a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
 .navigation .toggle-button {
     float: right;
+    position: relative;
     width: 2rem;
     height: 2rem;
-    margin-right: 1rem;
-    margin-top: 0.3rem;
+    margin-top: -0.4rem;
 }
 
 .navigation ul ul {
-    padding-left: 1.5rem;
+    padding-left: 0.7rem;
     z-index: 9999;
+}
+
+.navigation ul ul .toggle-button {
+    margin-top: -0.5rem;
 }
 
 /* Highlight the current menu item */
@@ -76,14 +95,25 @@
 
 @media (min-width: 768px) {
     .navigation-medium ul {
-        display: inline-block;
+        /* display: inline-block; Known Issue: https://tylercipriani.com/blog/2012/08/01/display-inline-block-extra-margin/ */
+        display: block;
+        float: left;
     }
 
     .navigation-medium .toggle-button {
-        display: none;
+        /* Hide from eye instead of hiding, to make the item accessible */
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0,0,0,0);
+        white-space: nowrap;
+        border: 0;
     }
 
-    .navigation-medium .toggle-button + a::after {
+    .navigation-medium .has-submenu > a::after {
         content: "";
         display: inline-block;
         width: 0;
@@ -92,19 +122,20 @@
     }
 
     /* Arrow down */
-    .navigation-medium > ul > li > .toggle-button + a::after {
+    .navigation-medium > ul > li.has-submenu > a::after {
         border-left: 5px solid transparent;
         border-right: 5px solid transparent;
         border-top: 5px solid #666;
         margin-left: 10px;
     }
 
-    .navigation-medium > ul > li > ul .toggle-button + a::after {
+    /* Arrow right */
+    .navigation-medium > ul > li > ul .has-submenu > a::after {
         float: right;
         margin-left: 0;
         border-top: 5px solid transparent;
         border-bottom: 5px solid transparent;
-        border-left: 5px solid #666;
+        border-left: 5px solid #fff;
         margin-top: 5px;
     }
 
@@ -135,4 +166,16 @@
         top: 0;
         left: 200px;
     }
+}
+
+.screen-reader-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
 }

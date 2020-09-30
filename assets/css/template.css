@@ -3,7 +3,17 @@
 }
 
 body {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Titillium Web', Arial, Helvetica, sans-serif;
+    font-weight: 300;
+}
+
+b, strong {
+    font-weight: 700;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', 'Georgia', 'Times New Roman', serif;
+    font-weight: 700;
 }
 
 .mt-0 {
@@ -19,6 +29,18 @@ body {
     padding-right: 1.5rem;
 }
 
+.text-muted {
+    color: #888;
+}
+
+.border {
+    border: 1px solid #ccc;
+}
+
+.rounded {
+    border-radius: 3px;
+}
+
 h1 {
     color: rgb(58, 83, 155);
     padding-bottom: 0.25rem;
@@ -30,6 +52,7 @@ h1 small {
     font-size: 70%;
 }
 
+.widget-content,
 .site-content {
     font-size: 18px;
     line-height: 25px;
@@ -43,31 +66,64 @@ h3 {
     margin-top: 2rem;
 }
 
+.sidebar {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
 @media (min-width: 768px) {
     #primary {
         float: right;
-        width: 80%;
+        width: 75%;
     }
 
     .sidebar {
         float: left;
-        width: 20%;
-        /* min-width: 300px; */
+        width: 25%;
+        padding-left: 1.5rem;
+        padding-right: 0;
     }
 }
 
+code {
+    color: #e83e8c;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 90%;
+}
+
+a {
+    text-decoration: none;
+    color: #2173b5;
+}
+
+a:active,
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
 pre {
-    background-color: rgb(210, 215, 211);
-    border: 3px solid rgba(108, 122, 137, 0.15);
+    overflow-x: auto;
+}
+
+pre code {
+    word-break: normal;
+    display: block;
+
+    background-color: #f8f9fa;
+    border: 3px solid rgba(108, 122, 137, 0.05);
     font-size: 16px;
-    color: #333;
     padding: 15px;
     border-radius: 5px;
     position:relative;
     font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+    display: block;
+    white-space: pre;
+    color: #333;
 }
 
-pre[data-lang]::before {
+pre code[data-lang]::before {
     content: attr(data-lang);
     display: inline-block;
     position: absolute;
@@ -81,4 +137,5 @@ pre[data-lang]::before {
     border-bottom-left-radius: 5px;
     font-size: 10px;
     line-height: 20px;
+    text-transform: uppercase;
 }
